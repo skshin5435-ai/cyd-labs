@@ -15,9 +15,11 @@ export default function Home() {
           <div className="text-xl font-black tracking-tighter text-white">CYD Bio-Innovation</div>
         </div>
         <div className="flex items-center gap-8">
-          <Link href="/legacy/index.html" target="_blank" className="hidden md:flex items-center gap-2 group/heritage">
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 group-hover/heritage:text-[#D4AF37] transition-colors">Heritage</span>
-            <div className="w-4 h-[1px] bg-slate-700 group-hover/heritage:bg-[#D4AF37] group-hover/heritage:w-8 transition-all duration-300"></div>
+          <Link href="/legacy/index.html" target="_blank" className="flex items-center gap-2 group/heritage bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-4 py-2 rounded-full transition-all duration-300">
+            <span className="text-xs md:text-sm font-bold tracking-tight text-[#D4AF37]">청유담 브랜드</span>
+            <svg className="w-3 h-3 text-[#D4AF37] group-hover/heritage:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </Link>
           <div className="flex items-center gap-4 cursor-pointer group">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#10B981]/80 group-hover:text-[#10B981] transition-colors">Menu</span>
