@@ -10,20 +10,20 @@ export default function Home() {
     <main className="font-sans antialiased bg-[#0A192F] text-slate-100 selection:bg-[#10B981] selection:text-[#0A192F]">
 
       {/* Top Navigation */}
-      <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-[#0A192F]/80 backdrop-blur-xl border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <div className="text-xl font-black tracking-tighter text-white">CYD Bio-Innovation</div>
+      <nav className="fixed top-0 w-full z-50 px-8 py-6 md:py-8 flex justify-between items-center bg-[#0A192F]/80 backdrop-blur-xl border-b border-white/5">
+        <div className="flex items-center gap-4">
+          <div className="text-3xl md:text-5xl font-black tracking-tighter text-white">CYD Bio-Innovation</div>
         </div>
-        <div className="flex items-center gap-8">
-          <Link href="/legacy/index.html" target="_blank" className="flex items-center gap-2 group/heritage bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-4 py-2 rounded-full transition-all duration-300">
-            <span className="text-xs md:text-sm font-bold tracking-tight text-[#D4AF37]">청유담 브랜드</span>
-            <svg className="w-3 h-3 text-[#D4AF37] group-hover/heritage:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        <div className="flex items-center gap-12">
+          <Link href="/legacy/index.html" target="_blank" className="flex items-center gap-4 group/heritage bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-8 py-4 rounded-full transition-all duration-300">
+            <span className="text-xl md:text-2xl font-extrabold tracking-tight text-[#D4AF37]">청유담 브랜드</span>
+            <svg className="w-5 h-5 text-[#D4AF37] group-hover/heritage:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </Link>
-          <div className="flex items-center gap-4 cursor-pointer group">
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#10B981]/80 group-hover:text-[#10B981] transition-colors">Menu</span>
-            <div className="w-8 h-[1px] bg-[#10B981] group-hover:w-12 transition-all duration-300"></div>
+          <div className="flex items-center gap-6 cursor-pointer group">
+            <span className="text-sm md:text-base font-bold tracking-[0.2em] uppercase text-[#10B981]/80 group-hover:text-[#10B981] transition-colors">Menu</span>
+            <div className="w-12 h-[2px] bg-[#10B981] group-hover:w-16 transition-all duration-300"></div>
           </div>
         </div>
       </nav>
