@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b77f",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#0A192F",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-extrabold leading-tight tracking-tight flex-1 text-center">Cheong-Yu-Dam</h2>
+<div class="flex w-10 items-center justify-end">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative px-4 py-12 @container">
+<div class="flex flex-col items-center justify-center min-h-[500px] rounded-2xl overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent"></div>
+<div class="absolute inset-0 opacity-20" data-alt="Subtle geometric dot pattern background" style="background-image: radial-gradient(circle at 2px 2px, #10b77f 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10 text-center space-y-6 max-w-sm">
+<span class="inline-block px-4 py-1.5 bg-primary/20 text-primary text-xs font-bold tracking-widest uppercase rounded-full">
+                    Bio-Innovation Leader
+                </span>
+<h1 class="text-slate-900 dark:text-white text-5xl font-black leading-[1.1] tracking-tight">
+                    당신의 아이디어를 <span class="text-primary">마스터피스</span>로
+                </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-medium leading-relaxed">
+                    Premium R&amp;D Agency specializing in bio-innovation and global trust.
+                </p>
+<div class="pt-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark text-base font-bold h-14 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                        Get Started
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section (Partners) -->
+<section class="py-8 bg-slate-100 dark:bg-slate-900/50">
+<h4 class="text-slate-500 dark:text-primary/70 text-xs font-bold leading-normal tracking-[0.2em] px-4 mb-6 text-center uppercase">Our Trusted Partners</h4>
+<div class="flex flex-wrap justify-center gap-8 px-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<div class="h-8 w-24 bg-slate-400/20 rounded flex items-center justify-center text-[10px] font-bold" data-alt="Medical Center Logo Placeholder">HOSPITAL A</div>
+<div class="h-8 w-24 bg-slate-400/20 rounded flex items-center justify-center text-[10px] font-bold" data-alt="Research Institute Logo Placeholder">INSTITUTE B</div>
+<div class="h-8 w-24 bg-slate-400/20 rounded flex items-center justify-center text-[10px] font-bold" data-alt="Bio Tech Corp Logo Placeholder">BIO CORP C</div>
+<div class="h-8 w-24 bg-slate-400/20 rounded flex items-center justify-center text-[10px] font-bold" data-alt="University Lab Logo Placeholder">UNI LAB D</div>
+</div>
+</section>
+<!-- Bento Grid Section: Partnership & Network -->
+<section class="p-4 space-y-4">
+<div class="flex items-end justify-between px-2 pt-4">
+<div>
+<h3 class="text-slate-900 dark:text-white text-2xl font-black leading-tight">Partnership &amp; Network</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Expanding horizons through innovation</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Large Card -->
+<div class="col-span-2 bg-slate-100 dark:bg-slate-800/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 relative overflow-hidden group">
+<div class="absolute -right-10 -bottom-10 size-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative z-10 flex flex-col h-full justify-between gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">hub</span>
+<div>
+<h4 class="text-slate-900 dark:text-white text-xl font-bold mb-1">Global R&amp;D Network</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-snug">Connection with 200+ global research centers and hospitals.</p>
+</div>
+</div>
+</div>
+<!-- Medium Card 1 -->
+<div class="col-span-1 bg-slate-100 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/50 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary text-3xl">biotech</span>
+<div>
+<h4 class="text-slate-900 dark:text-white text-base font-bold mb-1">Bio-Tech</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Advanced lab facilities for next-gen innovation.</p>
+</div>
+</div>
+<!-- Medium Card 2 -->
+<div class="col-span-1 bg-primary p-5 rounded-2xl flex flex-col justify-between aspect-square shadow-xl shadow-primary/10">
+<span class="material-symbols-outlined text-background-dark text-3xl">verified</span>
+<div>
+<h4 class="text-background-dark text-base font-bold mb-1">Certified</h4>
+<p class="text-background-dark/80 text-xs">ISO 9001 certified research protocols.</p>
+</div>
+</div>
+<!-- Small Wide Card -->
+<div class="col-span-2 bg-slate-100 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/50 flex items-center gap-4">
+<div class="size-12 bg-primary/20 rounded-xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white text-sm font-bold">Dedicated Strategy Team</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs">24/7 support for your R&amp;D lifecycle.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Strength Section -->
+<section class="p-4 py-12">
+<div class="bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-8 border border-slate-800 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" data-alt="Abstract molecular structure pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWoLIhzlgmMaZeV62Tb8QauX6RoYWUCrJ66CwbOI1uDRhm3iaw8ecomXsECrD9loJ2blb4sQ8JMgWJLBKqcooczJ25-kiQRFfAIg_D_VFP8qZ8M0BeF197vtFXph4YzEmE6VzYRgnLoGOlKqdRkqrYKYYw_gYMPggB3G_wjRbXu5O_5qJ9PqFC5LVOqIzeF-8xbdraBXu0aDSePCRHv4Duj2RLJ9Qhys5IJdLaIgltpoXhow9eAGEfxc-evHolvTUY81BLX2HHhQ"); background-size: cover;'></div>
+<div class="relative z-10 space-y-4">
+<h3 class="text-white text-3xl font-black">Strategic Edge</h3>
+<p class="text-slate-400 text-sm leading-relaxed">We don't just research; we architect the future of bio-technology through rigorous validation and creative engineering.</p>
+<ul class="space-y-3 pt-4">
+<li class="flex items-center gap-3 text-slate-300 text-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Market-driven R&amp;D Consultation
+                    </li>
+<li class="flex items-center gap-3 text-slate-300 text-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Proprietary Bio-data Analytics
+                    </li>
+<li class="flex items-center gap-3 text-slate-300 text-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Rapid Prototyping &amp; Testing
+                    </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="p-6 mb-12 text-center space-y-6">
+<h2 class="text-slate-900 dark:text-white text-3xl font-black">Ready to innovate?</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base">Join the network of industry leaders who trust Cheong-Yu-Dam for their core R&amp;D needs.</p>
+<div class="flex flex-col gap-3">
+<button class="bg-primary text-background-dark font-bold h-14 rounded-xl shadow-lg shadow-primary/20">Contact Our Experts</button>
+<button class="bg-transparent border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold h-14 rounded-xl">View Portfolio</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="p-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-slate-400 text-xs font-medium tracking-wider mb-2 uppercase">© 2024 Cheong-Yu-Dam Premium R&amp;D</p>
+<div class="flex justify-center gap-4 text-slate-500">
+<span class="material-symbols-outlined text-xl">language</span>
+<span class="material-symbols-outlined text-xl">share</span>
+<span class="material-symbols-outlined text-xl">shield</span>
+</div>
+</footer>
+</body></html>

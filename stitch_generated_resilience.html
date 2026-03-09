@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "navy-deep": "#0A192F",
+                        "bio-green": "#10B981",
+                        "slate-950": "#020617",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-navy-deep text-slate-100 antialiased;
+                font-family: 'Inter', sans-serif;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-navy-deep/80 backdrop-blur-xl">
+<div class="text-xl font-black tracking-tighter text-white">CHEONG-YU-DAM</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-bio-green/80">Menu</span>
+<div class="w-8 h-[1px] bg-bio-green"></div>
+</div>
+</nav>
+<section class="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-12 overflow-hidden">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-bio-green/10 blur-[120px] rounded-full -mr-48 -mt-24"></div>
+<div class="relative z-10 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-bio-green/30 bg-bio-green/5">
+<span class="w-1.5 h-1.5 rounded-full bg-bio-green animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-widest text-bio-green uppercase">Global R&amp;D Masterpiece</span>
+</div>
+<h1 class="text-5xl font-extrabold leading-[1.1] tracking-tight text-white text-balance">
+                당신의 아이디어,<br/>
+                특허가 되고 시장을<br/>
+                지배하는 <span class="text-bio-green">마스터피스로.</span>
+</h1>
+<p class="text-lg text-slate-400 font-light tracking-wide">
+                Clinical-Backed B2B 턴키 솔루션
+            </p>
+<div class="pt-8">
+<button class="group relative w-full h-16 bg-bio-green hover:bg-bio-green/90 transition-all duration-300 rounded-full flex items-center justify-center overflow-hidden">
+<span class="relative z-10 text-navy-deep font-bold text-lg tracking-tight">프로젝트 제안받기</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</div>
+<div class="absolute bottom-12 left-6">
+<div class="flex flex-col gap-1">
+<div class="w-1 h-8 bg-gradient-to-b from-bio-green to-transparent"></div>
+<span class="text-[10px] font-medium text-slate-500 uppercase tracking-widest vertical-rl">Scroll</span>
+</div>
+</div>
+</section>
+<section class="px-6 py-24 bg-slate-950/50">
+<div class="mb-12">
+<h2 class="text-[10px] font-bold tracking-[0.3em] text-bio-green uppercase mb-4">Value Chain</h2>
+<h3 class="text-3xl font-bold text-white tracking-tight">Proprietary Process</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 glass-card p-8 rounded-3xl relative group overflow-hidden">
+<div class="flex justify-between items-start mb-8">
+<div class="w-12 h-12 rounded-2xl bg-bio-green/10 flex items-center justify-center border border-bio-green/20">
+<svg class="w-6 h-6 text-bio-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<span class="text-5xl font-black text-white/5 tracking-tighter">01</span>
+</div>
+<h4 class="text-xl font-bold text-white mb-2 tracking-tight">Strategy</h4>
+<p class="text-sm text-slate-400 leading-relaxed font-light">글로벌 시장 분석과 제품 컨셉의 정교한 설계</p>
+</div>
+<div class="col-span-1 glass-card p-6 rounded-3xl">
+<div class="w-10 h-10 rounded-xl bg-bio-green/10 flex items-center justify-center border border-bio-green/20 mb-6">
+<svg class="w-5 h-5 text-bio-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.628.288a2 2 0 01-1.647 0l-.628-.288a6 6 0 00-3.86-.517l-2.387.477a2 2 0 00-1.022.547V18.14a2 2 0 001.022 1.742l2.387 1.194a2 2 0 001.789 0l2.387-1.194a2 2 0 011.789 0l2.387 1.194a2 2 0 001.789 0l2.387-1.194a2 2 0 001.022-1.742v-2.712z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<h4 class="text-base font-bold text-white mb-2">Science</h4>
+<p class="text-[11px] text-slate-500 leading-normal">원천 기술 확보 및 임상 데이터 검증</p>
+</div>
+<div class="col-span-1 glass-card p-6 rounded-3xl">
+<div class="w-10 h-10 rounded-xl bg-bio-green/10 flex items-center justify-center border border-bio-green/20 mb-6">
+<svg class="w-5 h-5 text-bio-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<h4 class="text-base font-bold text-white mb-2">Quality</h4>
+<p class="text-[11px] text-slate-500 leading-normal">글로벌 기준의 엄격한 제조 및 품질 관리</p>
+</div>
+<div class="col-span-2 glass-card p-8 rounded-3xl flex justify-between items-center bg-gradient-to-br from-bio-green/5 to-transparent">
+<div>
+<h4 class="text-xl font-bold text-white mb-2 tracking-tight">Branding</h4>
+<p class="text-sm text-slate-400 font-light">시장을 압도하는 프리미엄 비주얼 아이덴티티</p>
+</div>
+<div class="w-14 h-14 rounded-full border border-bio-green/40 flex items-center justify-center group-hover:bg-bio-green transition-colors">
+<span class="material-symbols-outlined text-bio-green text-2xl">diamond</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-24">
+<div class="mb-12">
+<h2 class="text-[10px] font-bold tracking-[0.3em] text-bio-green uppercase mb-4">Authority</h2>
+<h3 class="text-3xl font-bold text-white tracking-tight">Trust Network</h3>
+</div>
+<div class="space-y-4">
+<div class="w-full glass-card p-10 rounded-3xl border-t-2 border-bio-green/40 bg-gradient-to-b from-white/5 to-transparent">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-white/5 flex items-center justify-center p-4">
+<span class="text-white font-black text-4xl">AK</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-white mb-2 tracking-tight">대한약사한림원</h4>
+<p class="text-bio-green text-sm font-bold tracking-widest uppercase">Premium Strategic Partner</p>
+</div>
+<p class="text-slate-400 text-sm font-light leading-relaxed max-w-xs">국내 최고 권위의 약학 전문가 그룹과의 독점적 R&amp;D 파트너십</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center aspect-square">
+<div class="text-white/40 font-bold text-lg mb-2">PNUH</div>
+<span class="text-[10px] text-slate-500 font-medium tracking-tight text-center">부산대학교병원</span>
+</div>
+<div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center aspect-square">
+<div class="text-white/40 font-bold text-[13px] leading-tight text-center mb-2">COSMAX BIO<br/>CNS PHARM</div>
+<span class="text-[10px] text-slate-500 font-medium tracking-tight text-center">Manufacturing</span>
+</div>
+<div class="col-span-2 glass-card p-6 rounded-2xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+<span class="text-white/40 font-bold">GNAAI</span>
+</div>
+<span class="text-[12px] text-slate-400 font-medium">글로벌 천연물 기능성 연구소</span>
+</div>
+<span class="material-symbols-outlined text-bio-green text-sm">link</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-24 bg-navy-deep relative overflow-hidden">
+<div class="mb-16">
+<h2 class="text-4xl font-black text-white tracking-tighter mb-4">Start the<br/>Conversation</h2>
+<p class="text-slate-400 font-light">미래를 설계할 마스터피스, 지금 문의하십시오.</p>
+</div>
+<form class="space-y-12">
+<div class="group relative">
+<label class="absolute -top-6 left-0 text-[10px] font-bold text-bio-green tracking-widest uppercase opacity-60 group-focus-within:opacity-100 transition-opacity">Company</label>
+<input class="w-full bg-transparent border-b border-slate-800 focus:border-bio-green transition-colors py-4 px-0 text-lg font-light text-white focus:ring-0 outline-none placeholder-slate-700" placeholder="Company Name" type="text"/>
+</div>
+<div class="group relative">
+<label class="absolute -top-6 left-0 text-[10px] font-bold text-bio-green tracking-widest uppercase opacity-60 group-focus-within:opacity-100 transition-opacity">Name</label>
+<input class="w-full bg-transparent border-b border-slate-800 focus:border-bio-green transition-colors py-4 px-0 text-lg font-light text-white focus:ring-0 outline-none placeholder-slate-700" placeholder="Your Name" type="text"/>
+</div>
+<div class="group relative">
+<label class="absolute -top-6 left-0 text-[10px] font-bold text-bio-green tracking-widest uppercase opacity-60 group-focus-within:opacity-100 transition-opacity">Email</label>
+<input class="w-full bg-transparent border-b border-slate-800 focus:border-bio-green transition-colors py-4 px-0 text-lg font-light text-white focus:ring-0 outline-none placeholder-slate-700" placeholder="Email Address" type="email"/>
+</div>
+<div class="group relative">
+<label class="absolute -top-6 left-0 text-[10px] font-bold text-bio-green tracking-widest uppercase opacity-60 group-focus-within:opacity-100 transition-opacity">Content</label>
+<textarea class="w-full bg-transparent border-b border-slate-800 focus:border-bio-green transition-colors py-4 px-0 text-lg font-light text-white focus:ring-0 outline-none placeholder-slate-700 resize-none" placeholder="Briefly describe your project" rows="4"></textarea>
+</div>
+<button class="w-full h-16 bg-white text-navy-deep font-bold text-lg rounded-full hover:bg-bio-green hover:text-navy-deep transition-all duration-300">
+                Submit Inquiry
+            </button>
+</form>
+</section>
+<footer class="px-6 py-12 border-t border-slate-900 text-center">
+<div class="mb-8">
+<div class="text-white font-black tracking-tighter text-lg mb-2">CHEONG-YU-DAM</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">© 2024 Premium R&amp;D Architecture</p>
+</div>
+<div class="flex justify-center gap-8 text-slate-400">
+<span class="material-symbols-outlined text-xl">language</span>
+<span class="material-symbols-outlined text-xl">share</span>
+<span class="material-symbols-outlined text-xl">security</span>
+</div>
+</footer>
+
+</body></html>
