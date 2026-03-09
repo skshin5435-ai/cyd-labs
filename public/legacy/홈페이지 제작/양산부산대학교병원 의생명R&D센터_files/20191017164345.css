@@ -1,0 +1,225 @@
+/* common */
+@import url('font.css'); 
+* {padding:0;margin:0; -webkit-text-size-adjust:none; -moz-text-size-adjust: none; -ms-text-size-adjust: none}
+html {font-family: "notokr", sans-serif;font-size:14px}
+ul,ol,dl {list-style:none}
+ul li {display:inline-block;vertical-align:top}
+a,a:link,a:visited,a:hover  {text-decoration:none !important;}
+img {border:0}
+table {border-spacing:0;border-collapse:collapse}
+.clear {clear:both}
+.blue {color:#1967bf}
+.red {color:#e65319}
+.left {float:left}
+.right {float:right}
+.space10 {clear:both;height:10px}
+.space20 {clear:both;height:20px}
+.space25 {clear:both;height:25px}
+.space30 {clear:both;height:30px}
+.space40 {clear:both;height:40px}
+.space50 {clear:both;height:50px}
+.space60 {clear:both;height:60px}
+.space70 {clear:both;height:70px}
+.space80 {clear:both;height:80px}
+.space140 {clear:both;height:140px}
+
+/* wrap */
+#wrap {}
+
+
+/* header */
+#header {position:relative;}
+#header .total_menu {width:100%;height:287px;position:absolute;top:197px;display:none;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//top_menu_bg.jpg") no-repeat center center;z-index:999999}
+#header .total_menu ul {width:1100px;margin:0 auto}
+#header .total_menu ul li a {display:block;font-size:14px;color:#abbceb;padding:0 15px;line-height:30px}
+#header .total_menu ul li a:hover {color:#fff}
+#header .total_menu ul li {display:inline-block;height:237px}
+#header .total_menu ul li:nth-of-type(1) {width:20%;padding:25px 15px;border-left:1px solid #122047}/*기존 넓이 189px;*/
+#header .total_menu ul li:nth-of-type(2) {width:20%;padding:25px 15px;border-left:1px solid #122047}
+#header .total_menu ul li:nth-of-type(3) {width:20%;padding:25px 15px;border-left:1px solid #122047}
+#header .total_menu ul li:nth-of-type(4) {width:20%;padding:25px 15px;border-left:1px solid #122047}
+#header .total_menu ul li:nth-of-type(5) {width:20%;padding:25px 15px;border-left:1px solid #122047;border-right:1px solid #122047}
+#header .total_menu .tmenu {font-size:17px;font-weight:500;color:#fff;border:1px solid #2c3c6c;padding:5px 15px;margin-bottom:15px}
+#header .navi  .menu_btn_off {display:none}
+
+#header .top {background:#f5f5f5;border-bottom:1px solid #e6e6e6;height:40px}
+#header .top ul {width:1100px;margin:0 auto;text-align:right}
+#header .top ul li a {display:block;font-size:13px;color:#292929;padding:0 15px;line-height:40px;border-left:1px solid #e6e6e6}
+#header .top ul li:nth-last-of-type(1) a {border-right:1px solid #e6e6e6}
+#header .logo {width:1100px;margin:0 auto;text-align:center;padding:30px 0}
+#header .navi_wrap {background:#0082d2;height:50px}
+#header .navi {width:1100px;margin:0 auto}
+#header .navi .left {width:1050px}
+#header .navi ul li {display:inline-block;width:25%;text-align:center;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//navi_gap.gif") no-repeat right center}
+#header .navi ul li:nth-last-of-type(1) {background:none}
+#header .navi .tmenu {display:block;font-size:16px;font-weight:500;color:#fff;line-height:50px}
+#header .navi .right {width:50px}
+#header .main_img {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//main_img.jpg") no-repeat top center;min-width:1100px;height:455px}
+
+
+
+/* container */
+#container {width:1100px;margin:0 auto}
+#container .business {float:left;width:500px;height:275px;border:1px solid #d9d9d9;padding:20px 18px}
+#container .title_area {display:block;border-bottom:1px solid #d9d9d9;height:47px}
+#container .title_area .btitle {font-size:23px;font-weight:500;color:#121212;line-height:22px;padding-left:15px}
+#container .board_list {margin-top:15px;padding:0 10px}
+#container .board_list li {padding:7px 0}
+#container .board_list a {font-size:15px;color:#464646}
+#container .board_list a:before {content:"ㆍ"}
+#container .board_list .date {font-size:13px;color:#999}
+#container .notice {float:right;width:500px;height:275px;border:1px solid #d9d9d9;padding:20px 18px}
+#container .rolling {background:#f8f8f8;border:1px solid #d9d9d9}
+#container .main_banner li {margin:0;padding:0;width:33.3%;height:245px;vertical-align:top}
+#container .main_banner li a {margin:0;padding:0}
+
+
+
+/* sub container */
+#sub_container {width:1100px;margin:0 auto}
+#sub_container .sub_left_title {padding-top:30px;text-align:center;width:230px;height:70px;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub_title_bg.gif") no-repeat left top}
+#sub_container .sub_left_title h3 {font-size:20px;font-weight:500;color:#fff}
+#sub_container .sub_left_title .stitle {font-size:9px;font-weight:400;color:#5695f3;padding-top:6px}
+#sub_container .sub_menu a {display:block;font-size:15px;font-weight:500;color:#363636;padding:17px 0 17px 20px;border-bottom:1px solid #ddd}
+#sub_container .sub_menu a.on,#sub_container .sub_menu a:hover {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub_left_on.gif") no-repeat 210px center;color:#0052b5}
+#sub_container .sub_right {width:830px;margin-left:40px}
+#sub_container .sub_right .sub_pos {font-size:13px;font-weight:400;color:#777;height:20px;text-align:right}
+#sub_container .sub_right .sub_title {height:70px;line-height:68px;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//dot.gif") repeat-x left bottom}
+#sub_container .sub_right .sub_title h1 {display:inline-block;font-size:32px;font-weight:500;color:#121212;border-bottom:2px solid #0082d2}
+#sub_container .sub_content {padding:40px 0 0 0}
+#sub_container .sub_content .sub11_img {height:206px;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub1_2.jpg") no-repeat top center;font-size:21px;font-weight:400;line-height:1.5em;padding:80px 0 0 65px}
+#sub_container .sub_content .sub11_img b {font-weight:500}
+#sub_container .sub_content .sub11_img span {color:#0054b7}
+#sub_container .txt {font-size:15px;color:#363636;line-height:1.8em}
+#sub_container .sub_content_title {font-size:22px;font-weight:500;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//icon_sub_title.gif") no-repeat left center;padding-left:30px;margin-bottom:25px}
+#sub_container .sub_content_title2 {font-size:16px;font-weight:500;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//icon_sub_title2.gif") no-repeat left center;padding-left:30px;margin-bottom:20px}
+#sub_container .sub12 .vision {width:100%;display:table;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub1_2_1.gif") no-repeat center center;text-align:center;}
+#sub_container .sub12 .vision p {height:208px;display:table-cell;vertical-align:middle;font-size:19px;font-weight:500;color:#363636;line-height:1.7em;text-align:center}
+#sub_container .sub12 .target ul {display:table;text-align:center;width:auto;margin:0 auto}
+#sub_container .sub12 .target li {vertical-align:middle;display:table-cell;font-size:16px;font-weight:500;line-height:1.6em}
+#sub_container .sub12 .target li:nth-of-type(1) {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub1_2_2.gif") no-repeat center center;width:121px;height:210px;text-align:center;padding:0 45px;color:#1c6c9e}
+#sub_container .sub12 .target li:nth-of-type(3) {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub1_2_3.gif") no-repeat center center;width:141px;height:210px;text-align:center;padding:0 35px;color:#0f7911}
+#sub_container .sub12 .target li:nth-of-type(5) {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub1_2_4.gif") no-repeat center center;width:131px;height:210px;text-align:center;padding:0 40px;color:#dc5810}
+#sub_container .sub12 .target li:nth-of-type(2),#sub_container .sub12 .target li:nth-of-type(4) {width:50px}
+#sub_container .sub12 .target .content_txt {font-size:16px;font-weight:400;color:#363636;text-align:center;line-height:1.8em}
+#sub_container .sub14 .address_tel li {font-size:16px;font-weight:500;color:#363636}
+#sub_container .sub14 .address_tel .right {padding-top:23px}
+#sub_container .sub14 .address_tel .right img {vertical-align:top;padding-top:3px}
+#sub_container .sub14 .location {border-top:2px solid #000}
+#sub_container .sub14 .location tr {border-bottom:1px solid #e6e6e6}
+#sub_container .sub14 .location th img {padding-right:20px;vertical-align:middle}
+#sub_container .sub14 .location th {font-size:20px;font-weight:500;color:#121212;text-align:left}
+#sub_container .sub14 .location td img {vertical-align:middle}
+#sub_container .sub14 .location td {font-size:15px;color:#676767;line-height:1.6em;padding:25px 0}
+#sub_container .sub14 .location td .stitle {font-size:17px;font-weight:500;color:#121212;padding-bottom:10px}
+#sub_container .sub21 .content_txt {font-size:15px;color:#363636;line-height:1.6em}
+#sub_container .sub21 .content_txt .left {width:2%}
+#sub_container .sub21 .content_txt .right {width:98%} 
+#sub_container .sub21 .step ul {width:auto;margin:0 auto}
+#sub_container .sub21 .step li {vertical-align:middle;font-size:16px;font-weight:500;line-height:1.6em;padding-top:30px}
+#sub_container .sub21 .step li:nth-of-type(2n+1) {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//sub2_1_1.gif") no-repeat top center;width:144px;height:144px;text-align:center;font-size:16px;color:#464646}
+#sub_container .sub21 .step li:nth-of-type(2n+1) .num {font-size:22px;font-weight:500;color:#7fb1db;padding-bottom:10px}
+#sub_container .sub21 .step li:nth-of-type(2n) {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//icon_arrow_step.gif") no-repeat center top;width:60px;text-align:center}
+#sub_container .sub21 .step .content_txt {font-size:16px;font-weight:400;color:#363636;text-align:center;line-height:1.5em}
+
+#sub_container .sub31 .title {font-size:17px;font-weight:400;color:#363636;text-align:center;padding:0 7%}
+#sub_container .sub31 .plist {border-top:2px solid #000}
+#sub_container .sub31 .plist ul {padding:20px 0;border-bottom:1px solid #d7d7d7}
+#sub_container .sub31 .plist ul li:nth-of-type(1) {width:26.5%}
+#sub_container .sub31 .plist ul li:nth-of-type(1) img {border:1px solid #e6e6e6;padding:10px}
+#sub_container .sub31 .plist ul li:nth-of-type(2) {width:73.5%}
+#sub_container .sub31 .plist dt {float:left;width:18%;font-size:15px;color:#121212;padding:15px 0}
+#sub_container .sub31 .plist dd {font-size:15px;color:#676767;padding:15px 0}
+#sub_container .sub31 .plist dd:nth-of-type(1) {font-weight:500;color:#121212}
+#sub_container .sub31 .plist dd:nth-of-type(1) a {display:inline-block;background:#0082d2;padding:2px 5px 0 5px;font-size:11px;color:#fff;line-height:20px;vertical-align:middle;border-radius:3px;margin-left:8px}
+#sub_container .sub31 .plist .line {clear:both;width:100%;height:1px;background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//line_dot.gif") repeat-x left bottom}
+#sub_container .sub31 .detail_title {font-size:24px;font-weight:500;color:#121212;margin-bottom:20px}
+#sub_container .sub31 .pimg {border-top:2px solid #000;padding:30px 0;text-align:center}
+#sub_container .sub31 .pimg img {padding:10px;border:1px solid #e6e6e6}
+#sub_container .sub31 table {width:100%;border-bottom:1px solid #d8d8d8}
+#sub_container .sub31 table th {background:#f6f6f6;font-size:15px;font-weight:400;color:#121212;padding:20px 0;border-top:1px solid #d8d8d8;border-right:1px solid #d8d8d8}
+#sub_container .sub31 table td {padding:20px 20px 20px 30px;font-size:15px;font-weight:400;color:#464646;border-top:1px solid #d8d8d8;line-height:1.8em}
+#sub_container .sub31 .btn_list {display:block;background:#232934;width:200px;padding:20px 0;text-align:center;font-size:17px;font-weight:400;color:#fff;margin:30px auto 0 auto}
+
+#sub_container .sub33 table {display:table;width:100%;border-top:2px solid #000}
+#sub_container .sub33 table th {background:#f6f6f6;font-size:15px;font-weight:500;color:#363636;border-bottom:1px solid #ddd;border-right:1px solid #ddd}
+#sub_container .sub33 td {display:table-cell;padding:13px 3%;font-size:15px;font-weight:400;color:#565656;vertical-align:middle;border-bottom:1px solid #d8d8d8}
+#sub_container .sub33 td input {width:75%;height:30px;line-height:30px;padding:0 10px;border:1px solid #;border:1px solid #ddd}
+#sub_container .sub33 td textarea {width:100%;height:150px;border:1px solid #ddd;padding:10px;line-height:1.5}
+#sub_container .sub33 td .title {display:inline-block;width:70px}
+#sub_container .sub33 td .email1 {width:25%}
+#sub_container .sub33 td .email2 {width:35%}
+#sub_container .sub33 .con_txt {margin-top:20px;font-size:15px;color:#363636;text-align:center}
+#sub_container .sub33 .con_txt h3 {font-size:17px;font-weight:500;color:#363636;line-height:2em}
+#sub_container input[type='submit'] {font-size:17px;color:#fff;width:205px;height:60px;line-height:60px;background:#232934;border:1px solid #232934;text-align:center;margin:40px auto 0 auto};
+#sub_container .btn_center {display:block;width:100% !important;text-align:center !important}
+#sub_container .sub41 table {width:100%;border-top:2px solid #000}
+#sub_container .sub41 tr th {background:#f6f6f6;font-size:15px;font-weight:400;color:#363636;padding:20px;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8}
+#sub_container .sub41 tr td {font-size:15px;font-weight:400;color:#363636;padding:20px;padding-left:20px;border-bottom:1px solid #d8d8d8;line-height:2em}
+#sub_container .sub41 tr td .sub_lh {line-height:1.2em;padding:5px 0}
+#sub_container .sub41 .txt {font-size:15px;color:#363636}
+#sub_container .sub41 .tb3x4 {width:100%;border-top:2px solid #000} 
+#sub_container .sub41 .tb3x4 tr th {background:#f6f6f6;font-size:15px;font-weight:400;color:#363636;padding:15px;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8}
+#sub_container .sub41 .tb3x4 tr th:nth-last-of-type(1) {border-right:0}
+#sub_container .sub41 .tb3x4 tr td {font-size:15px;font-weight:400;color:#363636;padding:15px;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8;text-align:center}
+#sub_container .sub41 .tb3x4 tr td:nth-of-type(4) {border-right:0}
+#sub_container .sub41 .step ul {width:auto;margin:0 auto}
+#sub_container .sub41 .step li {font-size:16px;font-weight:500;line-height:1.6em;margin-bottom:20px}
+#sub_container .sub41 .step li:nth-of-type(2n+1) {width:24.5%}
+#sub_container .sub41 .step li:nth-of-type(2n+1) div {display:inline-block;background:#0058ba;width:90%;height:50px;padding-left:10%;border-radius:40px}
+#sub_container .sub41 .step li .txt {display:inline-block;font-size:16px;font-weight:500;color:#fff;vertical-align:top;padding-top:9px;padding-left:10px}
+#sub_container .sub41 .step li .step_txt {width:85%;margin:0 auto;font-size:15px;font-weight:400;color:#363636;line-height:1.5em;padding-top:5px;text-align:center}
+#sub_container .sub41 .step li:nth-of-type(2n+1) div .num {font-size:20px;font-weight:500;color:#7fb1db;line-height:45px}
+#sub_container .sub41 .step li:nth-of-type(2n)  {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//icon_arrow_step.gif") no-repeat center 15px;width:60px;height:50px;text-align:center;overflow:hidden}
+#sub_container .sub41 .step .content_txt {font-size:16px;font-weight:400;color:#363636;text-align:center;line-height:1.5em}
+#sub_container .sub421 .step ul {width:auto;margin:0 auto}
+#sub_container .sub421 .step li {font-size:16px;font-weight:500;line-height:1.6em;margin-bottom:50px}
+#sub_container .sub421 .step li:nth-of-type(2n+1) {width:24.5%}
+#sub_container .sub421 .step li:nth-of-type(2n+1) div {display:inline-block;background:#0058ba;width:90%;height:50px;padding-left:10%;border-radius:40px}
+#sub_container .sub421 .step li .txt {display:inline-block;font-size:16px;font-weight:500;color:#fff;vertical-align:top;padding-top:9px;padding-left:10px}
+#sub_container .sub421 .step li .step_txt {width:85%;margin:0 auto;font-size:15px;font-weight:400;color:#363636;line-height:1.5em;padding-top:10px;letter-spacing:-0.5px}
+#sub_container .sub421 .step li .step_txt span:before {content:'-';margin-right:2px}
+#sub_container .sub421 .step li .step_txt span:nth-of-type(2) {display:block;padding-top:5px}
+#sub_container .sub421 .step li .step_txt br {padding-top:5px}
+#sub_container .sub421 .step li:nth-of-type(2n+1) div .num {font-size:20px;font-weight:500;color:#7fb1db;line-height:45px}
+#sub_container .sub421 .step li:nth-of-type(2n)  {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//icon_arrow_step.gif") no-repeat center 15px;width:60px;height:50px;text-align:center;overflow:hidden}
+#sub_container .sub421 .step li:nth-of-type(6) {background:0}
+#sub_container .sub421 table {width:100%;border-top:2px solid #000}
+#sub_container .sub421 tr th {background:#f6f6f6;font-size:15px;font-weight:400;color:#363636;padding:15px;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8}
+#sub_container .sub421 tr td {font-size:15px;font-weight:400;color:#363636;padding:15px;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8;line-height:2em;text-align:center}
+#sub_container .sub421 tr th:nth-last-of-type(1),#sub_container .sub421 tr td:nth-last-of-type(1) {border-right:0}
+
+
+
+
+/* footer */
+#footer {}
+#footer .bot_link {background:#4659a9;height:40px}
+#footer .bot_link ul  {width:auto;max-width:1100px;margin:0 auto;text-align:center}
+#footer .bot_link ul li {background:url("https://www.pnuyh-brndc.or.kr/data/arch/skin//navi_gap2.gif") no-repeat right center}
+#footer .bot_link ul li:nth-last-of-type(1) {background:none}
+#footer .bot_link ul li a {display:block;padding:0 30px;line-height:40px;color:#fff}
+#footer .copyright {width:1100px;margin:0 auto;padding:20px 0}
+#footer .copyright li:nth-last-of-type(1) {font-size:12px;color:#464646;margin-left:40px}
+
+/* board */
+.bw_recent01 dd ol li {margin:0 !important}
+.bw_recent01 dd {padding:0 !important}
+.bw_recent01 dd ol li time {font-size:13px !important}
+.bw_recent01 dd ol {padding:0 !important}
+
+						.labels {
+							color:white;
+							background-color: #f85f0e;
+							font-size: 13px;
+							font-weight: bold;
+							text-align: center;
+							border: 2px solid white;
+							padding: 6px 6px 4px 6px;
+							line-height:1.3em;
+							cursor:text;
+						}
+
+						#map-canvas{width:100%; height:325px; margin:0;}
+
+#bw_img_pnuyh img {width:auto !important;max-width:97% !important}

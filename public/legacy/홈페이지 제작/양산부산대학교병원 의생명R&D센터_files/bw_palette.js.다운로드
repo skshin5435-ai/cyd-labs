@@ -1,0 +1,70 @@
+$(function(){
+	// 색상 피커
+	$("input[data-bw-colorpicker]").each(function(){
+		$(this).after(' <button type="button" class="bw_colorpicker_btn" data-target-id="'+$(this).attr("id")+'">색상</button>');
+	});
+	$(document).ajaxComplete(function() {
+		$("input[data-bw-colorpicker]").each(function(){
+			if($(this).next(".bw_colorpicker_btn").length == 0){
+				$(this).after(' <button type="button" class="bw_colorpicker_btn" data-target-id="'+$(this).attr("id")+'">색상</button>');
+			}
+		});
+	});
+
+	$("body").on("click", "input[data-bw-colorpicker] + .bw_colorpicker_btn", function(event){
+		if($("#bw_colorpicker").length == 0){
+			$("body").append('<div id="bw_colorpicker"></div>');
+		}
+
+		if($(this).attr("data-target-id") != ''){
+			var SEL = $('#'+$(this).attr("data-target-id"));
+		}
+		else{
+			var SEL = $(this);
+		}
+		var RGB = ($(this).val() != '') ? $.trim($(this).val()) : '#000000';
+
+		var COLORTBL = [
+			["#fa0909", "#f5f501", "#00f300", "#03f5f5", "#0a0af8", "#de00ff", "#ffffff", "#e1e0e0", "#dad9d9", "#d2d1d1", "#c7c6c6", "#bbbaba", "#bab9b9", "#b3b3b3", "#a6a4a4", "#9e9d9d"],
+			["#d10e27", "#f2e004", "#029b54", "#059fdd", "#2f2fe3", "#d4115b", "#908f8f", "#838181", "#7a7a7a", "#5b5b5b", "#5a5959", "#4a4a4a", "#3b3b3b", "#2a2929", "#151515", "#000000"],
+			["#e18565", "#e8a073", "#ecb677", "#f6ea87", "#b9d288", "#99c488", "#7fc08e", "#7bc6c0", "#76c2e8", "#7e9dc8", "#838bb8", "#8274a7", "#9a7ca9", "#b383ab", "#e28fac", "#e28988"],
+			["#d7563a", "#de7942", "#e59c4a", "#f9e857", "#a0c15f", "#74b163", "#3fa668", "#30a9a3", "#25b0e1", "#497eb3", "#55659d", "#5d4e8a", "#7c5288", "#9d578c", "#dd638e", "#da5d66"],
+			["#d2102a", "#d45325", "#dd811e", "#f4e202", "#86b636", "#389f3e", "#01894a", "#018e88", "#0396d1", "#015e98", "#0c4481", "#2d256a", "#5c2168", "#821e67", "#d3166b", "#d30e46"],
+			["#820611", "#8b380f", "#8c560c", "#9e9701", "#577f20", "#216f2b", "#006936", "#015e58", "#016992", "#013e67", "#0b2a58", "#1d0942", "#3e0e43", "#5a1145", "#8d0843", "#880b2a"],
+			["#610101", "#632702", "#674104", "#737201", "#3c5f18", "#0c551f", "#024824", "#024b45", "#015070", "#002a4a", "#051a47", "#120128", "#290129", "#4b0135", "#69052e", "#63031a"],
+			["#b8a68b", "#897a69", "#665548", "#4b3c36", "#372c2d", "#b38f60", "#967142", "#77532c", "#674020", "#512d16", "#675443", "#997679", "#a7867d", "#b395a3", "#835369", "#753653"],
+			["#92c7fc", "#3c6fa0", "#557389", "#6a8bad", "#365181", "#012d59", "#af5222", "#bf693d", "#e99c64", "#b0c0d7", "#57758c", "#567287", "#e1e5e9", "#edeae3", "#c5b99e", "#e5decd"]
+		];
+
+		var HM = '<table id="bw_colorpicker_palette">';
+		for (var i = 0; i < COLORTBL.length; i++) {
+			HM += '<tr>';
+			for (var j = 0; j < COLORTBL[i].length; j++) {
+				HM += '<td style="background:'+COLORTBL[i][j]+';" data-rgb-pick="'+COLORTBL[i][j]+'" '+((RGB == COLORTBL[i][j]) ? 'class="on"' : '')+'></td>';
+			}
+			HM += '</tr>';
+		}
+		HM += '</table>';
+
+		HM += '<p class="mg8 txc"><label>색상 선택: <input type="text" id="bw_colorpicker_value" value="'+RGB+'" /></label></p>';
+		HM += '<p class="mg8 txc"><button type="button" id="bw_colorpicker_ok">확인</button> <button type="button" id="bw_colorpicker_cancel">닫기</button></p>';
+
+		$("#bw_colorpicker").show().css({"position":"absolute","left":event.pageX-32,"top":event.pageY-32,"padding":16,"background":"white","borderRadius":16,"boxShadow":"0 0 8px rgba(0,0,0,0.5)"}).html(HM);
+		$("#bw_colorpicker_value").focus();
+
+		$("#bw_colorpicker_palette td").click(function(){
+			$("#bw_colorpicker_palette td").removeClass('on');
+			$(this).addClass('on');
+			$("#bw_colorpicker_value").val($(this).attr("data-rgb-pick"));
+		});
+
+		$("#bw_colorpicker_cancel").click(function(){
+			$("#bw_colorpicker").empty().hide();
+		});
+
+		$("#bw_colorpicker_ok").click(function(){
+			SEL.val($("#bw_colorpicker_value").val()).focus();
+			$("#bw_colorpicker").empty().hide();
+		});
+	});
+});

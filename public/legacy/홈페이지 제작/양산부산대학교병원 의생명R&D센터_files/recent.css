@@ -1,0 +1,12 @@
+.bw_recent01{}
+.bw_recent01 dt{padding:8px 12px; border-radius:9999px; background:#454b5c;}
+.bw_recent01 dt b{color:white; font-weight:600; font-size:14px;}
+.bw_recent01 dt a{color:white; text-decoration:none; float:right; font-size:11px; padding:2px 0;}
+.bw_recent01 dd{padding:8px;}
+.bw_recent01 dd ol{margin:0; padding:0 0 0 24px;}
+.bw_recent01 dd ol li{margin:0 0 8px 0; padding:0 4px 0 0; list-style-type:square; color:#CCC; font-size:13px;}
+.bw_recent01 dd ol li a{color:#464646; text-decoration:none;}
+.bw_recent01 dd ol li a:hover{text-decoration:underline;}
+.bw_recent01 dd ol li var{color:#0072bc; font-size:11px;}
+.bw_recent01 dd ol li span{font-size:12px; color:#707070;}
+.bw_recent01 dd ol li time{float:right; padding:1px 0; font-size:11px; color:#707070;}

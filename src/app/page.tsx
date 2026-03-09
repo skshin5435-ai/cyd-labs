@@ -14,9 +14,15 @@ export default function Home() {
         <div className="flex items-center gap-3">
           <div className="text-xl font-black tracking-tighter text-white">CYD Bio-Innovation</div>
         </div>
-        <div className="flex items-center gap-4 cursor-pointer group">
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#10B981]/80 group-hover:text-[#10B981] transition-colors">Menu</span>
-          <div className="w-8 h-[1px] bg-[#10B981] group-hover:w-12 transition-all duration-300"></div>
+        <div className="flex items-center gap-8">
+          <Link href="/legacy/index.html" target="_blank" className="hidden md:flex items-center gap-2 group/heritage">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 group-hover/heritage:text-[#D4AF37] transition-colors">Heritage</span>
+            <div className="w-4 h-[1px] bg-slate-700 group-hover/heritage:bg-[#D4AF37] group-hover/heritage:w-8 transition-all duration-300"></div>
+          </Link>
+          <div className="flex items-center gap-4 cursor-pointer group">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#10B981]/80 group-hover:text-[#10B981] transition-colors">Menu</span>
+            <div className="w-8 h-[1px] bg-[#10B981] group-hover:w-12 transition-all duration-300"></div>
+          </div>
         </div>
       </nav>
 

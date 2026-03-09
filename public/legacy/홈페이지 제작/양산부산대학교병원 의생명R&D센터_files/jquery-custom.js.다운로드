@@ -1,0 +1,336 @@
+// jQuery에 추가 함수를 넣는 곳
+(function($){
+	// 3자리씩 끊기
+	$.nf3 = function(number, decimals, dec_point, thousands_sep) {
+				number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+				var n = !isFinite(+number) ? 0 : +number,
+					prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+					sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+					dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+					s = '',
+					toFixedFix = function (n, prec) {
+						var k = Math.pow(10, prec);
+						return '' + Math.round(n * k) / k;
+					};
+				// Fix for IE parseFloat(0.55).toFixed(0) = 0;
+				s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+				if (s[0].length > 3) {
+					s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+				}
+				if ((s[1] || '').length < prec) {
+					s[1] = s[1] || '';
+					s[1] += new Array(prec - s[1].length + 1).join('0');
+				}
+				return s.join(dec);
+			}
+
+	// 팝업
+	$.fn.popupWindow = function(instanceSettings){
+		return this.each(function(){
+			$(this).click(function(){
+				$.fn.popupWindow.defaultSettings = {
+					centerBrowser:0, // center window over browser window? {1 (YES) or 0 (NO)}. overrides top and left
+					centerScreen:0, // center window over entire screen? {1 (YES) or 0 (NO)}. overrides top and left
+					height:500, // sets the height in pixels of the window.
+					left:0, // left position when the window appears.
+					location:1, // determines whether the address bar is displayed {1 (YES) or 0 (NO)}.
+					menubar:1, // determines whether the menu bar is displayed {1 (YES) or 0 (NO)}.
+					resizable:1, // whether the window can be resized {1 (YES) or 0 (NO)}. Can also be overloaded using resizable.
+					scrollbars:1, // determines whether scrollbars appear on the window {1 (YES) or 0 (NO)}.
+					status:1, // whether a status line appears at the bottom of the window {1 (YES) or 0 (NO)}.
+					width:500, // sets the width in pixels of the window.
+					windowName:null, // name of window set from the name attribute of the element that invokes the click
+					windowURL:null, // url used for the popup
+					top:1, // top position when the window appears.
+					toolbar:1 // determines whether a toolbar (includes the forward and back buttons) is displayed {1 (YES) or 0 (NO)}.
+				};
+
+				settings = $.extend({}, $.fn.popupWindow.defaultSettings, instanceSettings || {});
+				var windowFeatures =    'height=' + settings.height +
+				',width=' + settings.width +
+				',toolbar=' + settings.toolbar +
+				',scrollbars=' + settings.scrollbars +
+				',status=' + settings.status +
+				',resizable=' + settings.resizable +
+				',location=' + settings.location +
+				',menuBar=' + settings.menubar;
+
+				settings.windowName = this.name || settings.windowName;
+				settings.windowURL = settings.windowURL; //this.href || settings.windowURL;
+				var centeredY,centeredX;
+
+				if(settings.centerBrowser){
+					if ($.browser.msie) {//hacked together for IE browsers
+						centeredY = (window.screenTop - 120) + ((((document.documentElement.clientHeight + 120)/2) - (settings.height/2)));
+						centeredX = window.screenLeft + ((((document.body.offsetWidth + 20)/2) - (settings.width/2)));
+					}else{
+						centeredY = window.screenY + (((window.outerHeight/2) - (settings.height/2)));
+						centeredX = window.screenX + (((window.outerWidth/2) - (settings.width/2)));
+					}
+					window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY).focus();
+				}else if(settings.centerScreen){
+					centeredY = (screen.height - settings.height)/2;
+					centeredX = (screen.width - settings.width)/2;
+					window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY).focus();
+				}else{
+					window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + settings.left +',top=' + settings.top).focus();
+				}
+				return false;
+			});
+		});
+	};
+
+	// 역슬래시 제거
+	$.strip = function strip(str) {
+	  //       discuss at: http://phpjs.org/functions/stripslashes/
+	  //      original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  //      improved by: Ates Goral (http://magnetiq.com)
+	  //      improved by: marrtins
+	  //      improved by: rezna
+	  //         fixed by: Mick@el
+	  //      bugfixed by: Onno Marsman
+	  //      bugfixed by: Brett Zamir (http://brett-zamir.me)
+	  //         input by: Rick Waldron
+	  //         input by: Brant Messenger (http://www.brantmessenger.com/)
+	  // reimplemented by: Brett Zamir (http://brett-zamir.me)
+	  //        example 1: stripslashes('Kevin\'s code');
+	  //        returns 1: "Kevin's code"
+	  //        example 2: stripslashes('Kevin\\\'s code');
+	  //        returns 2: "Kevin\'s code"
+
+	  return (str + '')
+		.replace(/\\(.?)/g, function(s, n1) {
+		  switch (n1) {
+			case '\\':
+			  return '\\';
+			case '0':
+			  return '\u0000';
+			case '':
+			  return '';
+			default:
+			  return n1;
+		  }
+		});
+	};
+
+	$.stristr = function stristr(haystack, needle, bool) {
+		  //  discuss at: http://phpjs.org/functions/stristr/
+		  // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+		  // bugfixed by: Onno Marsman
+		  //   example 1: stristr('Kevin van Zonneveld', 'Van');
+		  //   returns 1: 'van Zonneveld'
+		  //   example 2: stristr('Kevin van Zonneveld', 'VAN', true);
+		  //   returns 2: 'Kevin '
+
+		  var pos = 0;
+
+		  haystack += '';
+		  pos = haystack.toLowerCase()
+			.indexOf((needle + '')
+			  .toLowerCase());
+		  if (pos == -1) {
+			return false;
+		  } else {
+			if (bool) {
+			  return haystack.substr(0, pos);
+			} else {
+			  return haystack.slice(pos);
+			}
+		  }
+		};
+
+	$.str2str = function str2str(search, replace, subject, count) {
+	  //  discuss at: http://phpjs.org/functions/str_replace/
+	  // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // improved by: Gabriel Paderni
+	  // improved by: Philip Peterson
+	  // improved by: Simon Willison (http://simonwillison.net)
+	  // improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // improved by: Onno Marsman
+	  // improved by: Brett Zamir (http://brett-zamir.me)
+	  //  revised by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+	  // bugfixed by: Anton Ongson
+	  // bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // bugfixed by: Oleg Eremeev
+	  //    input by: Onno Marsman
+	  //    input by: Brett Zamir (http://brett-zamir.me)
+	  //    input by: Oleg Eremeev
+	  //        note: The count parameter must be passed as a string in order
+	  //        note: to find a global variable in which the result will be given
+	  //   example 1: str_replace(' ', '.', 'Kevin van Zonneveld');
+	  //   returns 1: 'Kevin.van.Zonneveld'
+	  //   example 2: str_replace(['{name}', 'l'], ['hello', 'm'], '{name}, lars');
+	  //   returns 2: 'hemmo, mars'
+
+	  var i = 0,
+		j = 0,
+		temp = '',
+		repl = '',
+		sl = 0,
+		fl = 0,
+		f = [].concat(search),
+		r = [].concat(replace),
+		s = subject,
+		ra = Object.prototype.toString.call(r) === '[object Array]',
+		sa = Object.prototype.toString.call(s) === '[object Array]';
+	  s = [].concat(s);
+	  if (count) {
+		this.window[count] = 0;
+	  }
+
+	  for (i = 0, sl = s.length; i < sl; i++) {
+		if (s[i] === '') {
+		  continue;
+		}
+		for (j = 0, fl = f.length; j < fl; j++) {
+		  temp = s[i] + '';
+		  repl = ra ? (r[j] !== undefined ? r[j] : '') : r[0];
+		  s[i] = (temp)
+			.split(f[j])
+			.join(repl);
+		  if (count && s[i] !== temp) {
+			this.window[count] += (temp.length - s[i].length) / f[j].length;
+		  }
+		}
+	  }
+	  return sa ? s : s[0];
+	};
+
+	$.nl2br = function nl2br(str, is_xhtml) {
+	  //  discuss at: http://phpjs.org/functions/nl2br/
+	  // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // improved by: Philip Peterson
+	  // improved by: Onno Marsman
+	  // improved by: Atli Þór
+	  // improved by: Brett Zamir (http://brett-zamir.me)
+	  // improved by: Maximusya
+	  // bugfixed by: Onno Marsman
+	  // bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  //    input by: Brett Zamir (http://brett-zamir.me)
+	  //   example 1: nl2br('Kevin\nvan\nZonneveld');
+	  //   returns 1: 'Kevin<br />\nvan<br />\nZonneveld'
+	  //   example 2: nl2br("\nOne\nTwo\n\nThree\n", false);
+	  //   returns 2: '<br>\nOne<br>\nTwo<br>\n<br>\nThree<br>\n'
+	  //   example 3: nl2br("\nOne\nTwo\n\nThree\n", true);
+	  //   returns 3: '<br />\nOne<br />\nTwo<br />\n<br />\nThree<br />\n'
+
+	  var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>'; // Adjust comment to avoid issue on phpjs.org display
+
+	  return (str + '')
+		.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, breakTag);
+	};
+
+	$.br2nl = function br2nl(str) {
+		var replaceStr = "\n";
+		// Includes <br>, <BR>, <br />, </br>
+		return str.replace(/<\s*\/?br\s*[\/]?>/gi, replaceStr);
+	};
+
+	$.striptag = function striptag(input, allowed) {
+	  //  discuss at: http://phpjs.org/functions/strip_tags/
+	  // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // improved by: Luke Godfrey
+	  // improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  //    input by: Pul
+	  //    input by: Alex
+	  //    input by: Marc Palau
+	  //    input by: Brett Zamir (http://brett-zamir.me)
+	  //    input by: Bobby Drake
+	  //    input by: Evertjan Garretsen
+	  // bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // bugfixed by: Onno Marsman
+	  // bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // bugfixed by: Eric Nagel
+	  // bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	  // bugfixed by: Tomasz Wesolowski
+	  //  revised by: Rafał Kukawski (http://blog.kukawski.pl/)
+	  //   example 1: strip_tags('<p>Kevin</p> <br /><b>van</b> <i>Zonneveld</i>', '<i><b>');
+	  //   returns 1: 'Kevin <b>van</b> <i>Zonneveld</i>'
+	  //   example 2: strip_tags('<p>Kevin <img src="someimage.png" onmouseover="someFunction()">van <i>Zonneveld</i></p>', '<p>');
+	  //   returns 2: '<p>Kevin van Zonneveld</p>'
+	  //   example 3: strip_tags("<a href='http://kevin.vanzonneveld.net'>Kevin van Zonneveld</a>", "<a>");
+	  //   returns 3: "<a href='http://kevin.vanzonneveld.net'>Kevin van Zonneveld</a>"
+	  //   example 4: strip_tags('1 < 5 5 > 1');
+	  //   returns 4: '1 < 5 5 > 1'
+	  //   example 5: strip_tags('1 <br/> 1');
+	  //   returns 5: '1  1'
+	  //   example 6: strip_tags('1 <br/> 1', '<br>');
+	  //   returns 6: '1 <br/> 1'
+	  //   example 7: strip_tags('1 <br/> 1', '<br><br/>');
+	  //   returns 7: '1 <br/> 1'
+
+	  allowed = (((allowed || '') + '')
+		.toLowerCase()
+		.match(/<[a-z][a-z0-9]*>/g) || [])
+		.join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+	  var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+		commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+	  return input.replace(commentsAndPhpTags, '')
+		.replace(tags, function($0, $1) {
+		  return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+		});
+	};
+
+	$.strLength = function strLength(str) {
+		/*let count = 0;
+		let joiner;
+		let split;
+		if ((navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)) {
+			return 0;
+		}
+		else {
+			joiner = "\u{200D}";
+			split = str.split(joiner);
+			for(const s of split){
+				//removing the variation selectors
+				const num = Array.from(s.split(/[\ufe00-\ufe0f]/).join("")).length;
+				count += num;
+			}
+
+			//assuming the joiners are used appropriately
+			return count / split.length;
+		}*/
+
+		return str.split('').length;
+	};
+
+	$.strCut = function strLength(str, leng) {
+		/*const joiner = "\u{200D}";	// 이모지가 2자로 취급되는 문제 추후 수정
+		const split = str.split(joiner);
+		let count = 0;
+
+		for(const s of split){
+			//removing the variation selectors
+			const num = Array.from(s.split(/[\ufe00-\ufe0f]/).join("")).length;
+			count += num;
+		}
+
+		return str.split('').slice(0, leng+count).join('');*/
+
+		return str.split('').slice(0, leng).join('');
+	};
+
+	$.loadingon = function loadingon(STR) {
+		if (STR === undefined) {
+			STR = '처리 시 시간이 걸립니다. 잠시 기다려 주십시오.';
+		}
+		if ($("#bw_ajax_wait").length == 0) {
+			$("body").append('<div id="bw_ajax_wait"></div>');
+		}
+
+		var LH = 180;
+		var LHP = Math.ceil(($(window).height() / 2) - (LH / 2));
+		var H = Math.max($("body").height(), $(window).height());
+		$("#bw_ajax_wait").show().css({"height":H, "padding":LHP+'px 0 0 0'}).html(
+			'<div style="box-sizing:border-box; width:calc(100% - 40px); max-width:640px; min-height:'+LH+'px; background:#ebebeb; margin:0 auto; padding:16px; border-radius:16px; text-align:center;">'+
+				'<p>'+STR+'</p>'+
+				'<p><img src="https://waas.kr/.css/arch.0/loading.gif" alt="" /></p>'+
+			'</div>'
+		);
+	};
+
+	$.loadingoff = function loadingoff() {
+		$("#bw_ajax_wait").remove();
+	};
+})(jQuery);

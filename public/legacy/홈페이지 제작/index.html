@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청유담 - 자연을 담은 건강한 약속</title>
+    <!-- 폰트: Noto Sans KR (구글 폰트) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 아이콘: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* [기본 설정] */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; }
+        body { color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        /* [컬러 팔레트: 청유담 전용] */
+        :root {
+            --primary-green: #2E5C38; /* 짙은 녹색 (신뢰, 한방) */
+            --light-green: #E8F5E9;   /* 연한 녹색 (배경) */
+            --accent-brown: #8D6E63;  /* 브라운 (본초로, 흙) */
+            --bg-beige: #F9F9F7;      /* 베이지 (따뜻함) */
+            --text-dark: #1A1A1A;
+            --white: #FFFFFF;
+        }
+
+        /* [1. 헤더 & 네비게이션] */
+        header {
+            position: sticky; top: 0; width: 100%; background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary-green); }
+        .nav-menu { display: flex; gap: 30px; font-weight: 500; }
+        .nav-menu a:hover { color: var(--accent-brown); }
+        .nav-icons { display: flex; gap: 15px; color: #666; }
+
+        /* [2. 히어로 배너 (메인)] */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center;
+            height: 600px; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: var(--white);
+        }
+        .hero-content h1 { font-size: 48px; margin-bottom: 20px; font-weight: 700; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+        .btn-main {
+            padding: 15px 40px; background: var(--primary-green); color: var(--white);
+            border-radius: 30px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer;
+        }
+        .btn-main:hover { background: var(--accent-brown); }
+
+        /* [3. 브랜드 철학 (텍스트)] */
+        .philosophy { padding: 80px 20px; text-align: center; background: var(--white); }
+        .philosophy h2 { font-size: 32px; color: var(--text-dark); margin-bottom: 20px; }
+        .philosophy p { color: #666; max-width: 700px; margin: 0 auto; }
+
+        /* [4. 핵심 가치 아이콘] */
+        .values { padding: 60px 20px; background: var(--bg-beige); }
+        .values-grid {
+            max-width: 1200px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;
+        }
+        .value-item i { font-size: 40px; color: var(--primary-green); margin-bottom: 15px; }
+        .value-item h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-dark); }
+        .value-item p { font-size: 14px; color: #777; }
+
+        /* [5. 제품 소개 (좌우 분할)] */
+        .products { display: flex; flex-wrap: wrap; }
+        .product-card {
+            flex: 1; min-width: 300px; padding: 80px 40px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .prod-left { background: #F0F4F0; } /* 본초로 배경 */
+        .prod-right { background: #FFF8F0; } /* 새싹삼 배경 */
+        
+        .product-img { width: 200px; height: 250px; background: #ddd; margin-bottom: 30px; border-radius: 10px; object-fit: cover;}
+        .product-card h3 { font-size: 28px; margin-bottom: 15px; color: var(--primary-green); }
+        .product-card p { margin-bottom: 25px; color: #555; }
+        .btn-outline {
+            padding: 10px 30px; border: 2px solid var(--primary-green);
+            color: var(--primary-green); border-radius: 25px; font-weight: bold; transition: 0.3s;
+        }
+        .btn-outline:hover { background: var(--primary-green); color: var(--white); }
+
+        /* [6. 건강정보 (뉴스)] */
+        .news-section { padding: 80px 20px; background: var(--primary-green); color: var(--white); }
+        .news-container { max-width: 1200px; margin: 0 auto; }
+        .news-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px; }
+        .news-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .news-item { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px; }
+        .news-date { font-size: 12px; opacity: 0.7; margin-bottom: 10px; display: block; }
+        .news-title { font-size: 16px; font-weight: 500; }
+
+        /* [7. Company Info Cards] */
+        .about-cards { padding: 80px 20px; background: var(--white); }
+        .card-grid {
+            max-width: 1200px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(4, 1fr); gap: 20px;
+        }
+        .info-card {
+            height: 300px; background: #eee; position: relative;
+            border-radius: 10px; overflow: hidden; cursor: pointer; transition: 0.3s;
+        }
+        .info-card:hover { transform: translateY(-5px); }
+        .info-card img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+        .card-text {
+            position: absolute; bottom: 20px; left: 20px; color: var(--white);
+        }
+        .card-text h4 { font-size: 20px; margin-bottom: 5px; }
+
+        /* [8. 구매 채널 & 푸터] */
+        .buy-channel { padding: 40px 20px; text-align: center; background: #f4f4f4; }
+        .buy-btn { padding: 15px 30px; margin: 10px; border-radius: 5px; font-weight: bold; display: inline-block; }
+        .naver { background: #03C75A; color: white; }
+        .coupang { background: #E60012; color: white; }
+
+        footer { background: #222; color: #999; padding: 50px 20px; font-size: 14px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .footer-info h4 { color: #fff; margin-bottom: 15px; }
+
+        /* [모바일 반응형] */
+        @media (max-width: 768px) {
+            .values-grid, .news-list, .card-grid { grid-template-columns: 1fr; }
+            .products { flex-direction: column; }
+            .hero-content h1 { font-size: 32px; }
+            .nav-menu { display: none; } /* 모바일 메뉴 추후 구현 */
+            .footer-content { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 헤더 -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">청유담(淸有潭)</div>
+            <nav class="nav-menu">
+                <a href="#">브랜드 스토리</a>
+                <a href="#">제품소개</a>
+                <a href="#">건강정보(Hub)</a>
+                <a href="#">고객센터</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-user"></i></a> <!-- 로그인 -->
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 히어로 배너 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>자연이 주는 따뜻함,<br>청유담이 연구합니다.</h1>
+            <p>수족냉증 개선을 위한 본초로와 친환경 새싹삼.<br>당신의 건강한 체온을 지켜드립니다.</p>
+            <button class="btn-main">브랜드 소개 보기</button>
+        </div>
+    </section>
+
+    <!-- 3. 브랜드 철학 -->
+    <section class="philosophy">
+        <h2>위대함을 향한 청유담의 끊임없는 도전</h2>
+        <p>
+            청유담은 (주)한국바이오엔지니어링의 기술력을 이어받아,<br>
+            자연 유래 성분과 과학적 검증을 통해 가장 안전하고 효과적인 건강식품을 만듭니다.
+        </p>
+    </section>
+
+    <!-- 4. 핵심 가치 아이콘 -->
+    <section class="values">
+        <div class="values-grid">
+            <div class="value-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Nature</h3>
+                <p>자연 그대로의 원료</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-flask"></i>
+                <h3>Research</h3>
+                <p>끊임없는 연구개발</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-check-circle"></i>
+                <h3>Quality</h3>
+                <p>엄격한 품질관리</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-seedling"></i>
+                <h3>Herbal Science</h3>
+                <p>한방 과학의 현대화</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 제품 소개 (좌우 분할) -->
+    <section class="products">
+        <!-- 본초로 -->
+        <div class="product-card prod-left">
+            <img src="https://via.placeholder.com/200x250?text=Bonchoro" alt="청유담 본초로" class="product-img">
+            <h3>청유담 본초로</h3>
+            <p>냉초 기반 액상차.<br>수족냉증과 복부냉증을 위한 따뜻한 습관.</p>
+            <a href="#" class="btn-outline">자세히 보기</a>
+        </div>
+        <!-- 새싹삼 -->
+        <div class="product-card prod-right">
+            <img src="https://via.placeholder.com/200x250?text=Ginseng" alt="명품 새싹삼" class="product-img">
+            <h3>명품 새싹삼</h3>
+            <p>뿌리부터 잎까지 통째로 먹는<br>친환경 스마트팜 재배 새싹삼.</p>
+            <a href="#" class="btn-outline">자세히 보기</a>
+        </div>
+    </section>
+
+    <!-- 6. 건강정보 (뉴스) -->
+    <section class="news-section">
+        <div class="news-container">
+            <div class="news-header">
+                <h2>청유담 NEWS & 건강정보</h2>
+                <a href="#" style="color:white; font-size:14px;">VIEW MORE <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <span class="news-date">2025.11.26</span>
+                    <div class="news-title">양산부산대병원 의생명창의연구동 입주 안내</div>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.11.20</span>
+                    <div class="news-title">[건강칼럼] 수족냉증, 왜 생기는 걸까? (논문 분석)</div>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2025.11.15</span>
+                    <div class="news-title">청유담 유튜브 채널 개설 및 이벤트</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. About Cards -->
+    <section class="about-cards">
+        <div class="card-grid">
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="연구소">
+                <div class="card-text">
+                    <h4>연구소 소개</h4>
+                    <p>R&D Center</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="농가">
+                <div class="card-text">
+                    <h4>원료 이야기</h4>
+                    <p>Ingredients</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="분석">
+                <div class="card-text">
+                    <h4>품질 보증</h4>
+                    <p>Quality Control</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="문의">
+                <div class="card-text">
+                    <h4>오시는 길</h4>
+                    <p>Contact Us</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 구매 채널 -->
+    <section class="buy-channel">
+        <h3>청유담 제품 구매하기</h3>
+        <a href="#" class="buy-btn naver">네이버 스마트스토어</a>
+        <a href="#" class="buy-btn coupang">쿠팡 로켓배송</a>
+    </section>
+
+    <!-- 9. 푸터 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>(주)청유담</h4>
+                <p>대표: 김미순 | 연구소장: 신상규</p>
+                <p>주소: 경남 양산시 물금읍 부산대학로 49, 의생명창의연구동 218호</p>
+                <p>사업자등록번호: [번호입력] | 통신판매업신고: [번호입력]</p>
+                <p style="margin-top:20px; font-size:12px;">COPYRIGHT (C) CHEONGYUDAM. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="footer-links">
+                <h4>고객센터</h4>
+                <p>010-4322-5435</p>
+                <p>평일 09:00 - 18:00</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
