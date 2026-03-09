@@ -9,7 +9,7 @@ export async function POST(
     const { password } = await request.json();
     const { id } = await params;
 
-    const MASTER_PASSWORD = process.env.ADMIN_MASTER_PASSWORD || 'cydadmin123'; // 기본 마스터 비번 설정
+    const MASTER_PASSWORD = process.env.ADMIN_MASTER_PASSWORD || 'cyd12345'; // 요청하신 마스터 비번으로 수정
 
     // Try individual password or master password
     const { rows } = await sql`
