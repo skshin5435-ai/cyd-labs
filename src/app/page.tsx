@@ -15,6 +15,7 @@ export default function Home() {
           <div className="text-xl md:text-3xl font-black tracking-tighter text-white whitespace-nowrap">CYD Bio-Innovation</div>
         </div>
         <div className="flex items-center gap-3 md:gap-8">
+          <Link href="/board" className="text-xs md:text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-[#10B981] transition-colors">Board</Link>
           <Link href="/legacy/index.html" target="_blank" className="flex items-center gap-2 md:gap-4 group/heritage bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-3 md:px-6 py-2 md:py-3 rounded-full transition-all duration-300">
             <span className="text-[10px] md:text-lg font-extrabold tracking-tight text-[#D4AF37] whitespace-nowrap">청유담 브랜드</span>
             <svg className="w-3 h-3 md:w-4 md:h-4 text-[#D4AF37] group-hover/heritage:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
